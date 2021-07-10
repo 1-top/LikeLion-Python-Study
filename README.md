@@ -3,6 +3,7 @@
 - `Python`에 대해서 학습한 내용을 기록하는 레포지토리입니다.
 
 ## Participants
+
 - 이서현 `Harry-Bro`
 - 정래현 `fogus14`
 - 최시영 `siyoung08`
@@ -48,12 +49,13 @@
     - 수정했을 경우: Fix
     - 파일을 삭제할 경우: Remove
     - 리팩토링 했을 경우: Refactor
+- 커밋 메시지 끝에는 작성자 이름을 작성합니다.
 
 ### 예시
 
 ```
-Study 클래스 상속
-Fix 요소 추가 메서드 에러
-Remove 불필요한 파일
-Refactor OO부분 코드 개선
+Study 클래스 상속 - 서현
+Fix 요소 추가 메서드 에러 - 래현
+Remove 불필요한 파일 - 시영
+Refactor OO부분 코드 개선 - 유진
 ```
