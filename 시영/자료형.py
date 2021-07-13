@@ -183,7 +183,7 @@ s1.remove(2)
 print(s1)
 
 ##불 자료형
-a = True#불 자료형 소개
+a = True #불 자료형 소개
 b = False
 print(type(a))
 print(1==1) #true, false
