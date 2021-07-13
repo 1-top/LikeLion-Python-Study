@@ -12,7 +12,7 @@ print(x>y)
 print(x==y)
 print(x !=y)
 
-#비교 연산자 예시
+#비교 연산자 예시.
 money = 2000
 if money >= 30000:
     print("택시를 타고 가라")
