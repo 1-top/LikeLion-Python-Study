@@ -5,7 +5,6 @@ else:
     print("걸어 가라")
 
 #비교연산자
-    
 x=3
 y=2
 print(x>y)
