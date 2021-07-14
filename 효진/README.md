@@ -1,3 +1,7 @@
-# 강효진 Repository
+강효진 Repository
+=================
 
-git commit test
+Python
+------
+1. 자료형
+2. 제어문
