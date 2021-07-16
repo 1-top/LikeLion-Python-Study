@@ -38,7 +38,7 @@ print(add(3,4))
 
 ##사용자 입력
 
-- input의 사용  
+- input의 사용.
 
 ## print 자세히 알기
 
