@@ -106,5 +106,49 @@ print("life", "is", "too", "short")
 
 ## 한줄에 결괏값 출력하기
 
-for i in range(10):
-    print(i, end=' ')
+#for i in range(10):
+   # print(i, end=' ')
+
+# ----------------------------------------------------------
+
+# 파일 읽고 쓰기
+f = open("C:/doit/새파일.txt", 'w')
+f.close()
+
+# 파일을 쓰기 모드로 열어 출력값 적기
+
+f= open("C:/doit/새파일.txt", 'w')
+for i in range(1,11):
+    data = "%d번째 줄입니다.\n" % i
+    f.write(data)
+f.close()
+
+# readline 함수 이용하기
+
+f = open("C:/doit/새파일.txt", 'r')
+line = f.readline()
+print(line)
+f.close()
+
+f = open("C:/doit/새파일.txt", 'r')
+while True:
+    line = f.readline()
+    if not line: break
+    print(line)
+f.close()
+
+# readlines 함수 사용하기
+
+f = open("C:/doit/새파일.txt", 'r')
+lines = f.readlines()
+for line in lines:
+    print(line)
+f.close()
+
+# 파일에 새로운 내용 추가하기
+f = open("C:/doit/새파일.txt",'a')
+for i in range(11, 20):
+    data = "%d번째 줄입니다.\n" % i
+    f.write(data)
+f.close()
+
