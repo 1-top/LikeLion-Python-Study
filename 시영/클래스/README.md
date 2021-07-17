@@ -30,14 +30,12 @@ print(add(4))
 ## 사칙연산 클래스 만들기
 클래스 속 함수를 '메서드' 라고 부름  
 - def 함수명(매개변수):  
-수행할 문장  
-  
-  
-  ```
+수행할 문장
+```
 def setdata(self, first, second):   # ① 메서드의 매개변수
     self.first = first              # ② 메서드의 수행문
     self.second = second            # ② 메서드의 수행문
-  ```
+```
 1. setdata 매서드의 매개변수
 
 - 클래스이름.매서드 형태로 호출할 때는 a를 매개변수 self에 전달해 주어야 할 필요 있음.
