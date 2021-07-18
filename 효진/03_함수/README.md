@@ -136,3 +136,105 @@ result = add(3,4)
 * `print()` : 자료형을 출력.
    * 문자열 띄어쓰기는 `,`사용
    * 한 줄에 결과값을 출력하기 위해서는 매개변수 `end`사용
+    
+7. 파일 읽고 쓰기  
+   (1) 파일 생성하기
+   ```python
+   f = open("새파일.txt", "w")
+   f.close
+   ```
+    * `파일객체 = open(파일 이름, 파일 열기 모드)`의 형태로 사용  
+
+   |**파일열기모드**|설명|
+   |:---:|:---|
+   |**r**|읽기모드 - 파일을 읽기만 할 때 사용|
+   |**w**|쓰기모드 - 파일에 내용을 쓸 때 사용|
+   |**a**|추가모드 - 파일의 마지막에 새로운 내용을 추가시킬 때 사용|
+
+    * 파일경로와 슬래시(`/`) : 파일 경로를 표시할 때는 슬래시 사용. 역슬래시(`\`)를 사용할 경우 `\n`과 같은
+    이스케이프 문자가 있을 경우 줄바꿈으로 인식되어 파일 경로가 달라짐.
+
+    (2) 쓰기모드로 열기
+    ```python
+    # writedata.py
+    f = open("새파일.txt", 'w')
+    for i in range(1, 11):
+        data = "%d번째 줄입니다.\n" % i
+        f.write(data)
+    f.close
+    ```
+    ```python
+    for i in range(1, 11):
+        data = "%d번째 줄입니다.\n" % i
+        print(data)
+    ```   
+   첫번째 방법은 파일에 결과값을 저장하고, 두번째 방법은 모니터에만 결과값을 출력하는 방법
+
+   (3) 파일 읽기
+    * `readline()` : 파일을 한줄 한 줄 읽어오는 방법
+    ```python
+    f = open("새파일.txt", 'r')
+    line = f.readline()
+    print(line)
+    f.close()
+    ```
+    ```python
+    # readlined_all.py (파일의 모든 줄을 읽어오고 싶을 때)
+    f = open("새파일.txt", 'r')
+    while True:
+        line = f.readline()
+        if not line : break
+        print(line)
+    f.close()
+    ```
+    * `readlines()` : 파일의 모든 줄을 읽어오는 방법
+    ```python
+    f = open("새파일.txt", 'r')
+    lines = f.readlines()
+    for line in lines :
+        line = line.strip() # 줄 끝의 줄바꿈 문자(\n)를 제거
+        print(line)
+    f.close
+    ```
+    * `read` : 파일의 내용 전체를 읽어오는 방법
+    ```python
+    f = open("새파일.txt", 'r')
+    data = f.read()
+    print(data)
+    f.close
+    ```
+
+    (4) 파일에 새로운 내용 추가하기
+    ```python
+    f = open("새파일.txt", 'a')
+    for i in range(11, 20):
+        data = "%d번째 줄입니다.\n" % i
+        f.write(data)
+    f.close()   
+    ```
+   
+    (5) `with`문
+    ```python
+    with open("foo.txt", "w") as f:
+        f.write("Life is too short, you need python")
+    ```
+    `with`문을 사용하게 되면 with 블록을 벗어나는 순간 f(파일객체)가 자동을 close됨.
+   
+    (6) `sys` 모듈로 매개변수 주기(참고자료: https://wikidocs.net/78)
+    * `sys`모듈 : 파이썬 인터프리터를 제어할 수 있는 방법.
+    * `argv` : argument(인수). `sys` 모듈의 `argv`는 명령 창에서 직접 입력한 인수를 의미.
+    ```python
+    # 입력받은 값을 출력해주는 프로그램
+    import sys
+    
+    args = sys.argv[1:]
+    for i in args:
+        print(i)
+    ```
+    ```python
+    # 입력받은 값을 대문자로 바꾸어 주는 프로그램
+    import sys
+    args = sys.argv[1:]
+    for i in args:
+        print(i.upper(), end=' ')
+    ```
