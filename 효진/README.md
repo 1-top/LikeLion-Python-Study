@@ -1,10 +1,11 @@
-강효진 Repository
-=================
+강효진 
+=====
 
 Python 기초
 ------
 * 학습자료 : https://wikidocs.net/book/1
-* 참고자료 : https://wikidocs.net/book/922
+* 참고자료 
+  - https://wikidocs.net/book/922
 ------
 
 1. 자료형
@@ -21,3 +22,5 @@ Python 기초
 4. 클래스
    * 클래스
    * 연습문제
+   
+----
