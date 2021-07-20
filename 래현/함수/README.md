@@ -162,3 +162,110 @@ for i in range(10):
 ...
 0 1 2 3 4 5 6 7 8 9
 ```
+
+### 04-3 파일 읽고 쓰기
+
+- 파일 생성하기
+
+: 파일을 생성하기 위한 내장함수 open
+
+```python
+파일 객체 = open(파일 이름, 파일 열기 모드)
+
+# 새 파일 만들기
+f = open("C:/doit/새파일.txt", 'w')
+f.close
+```
+
+: 파일 열기 모드의 종류
+
+r → 읽기모드 - 파일을 읽기만 할 때
+
+w → 쓰기모드 - 파일에 내용을 쓸 때
+
+a → 추가모드 - 파일의 마지막에 새로운 내용을 추가시킬 때 사용
+
+※ 파이썬 코드에서 파일경로를 표시할 때 `/` 를 활용할 수 있음. 만약 `\` 을 활용한다면 `\\` 로 2개사용하거나, 문자열 앞에 `r` 을 덧붙여 사용해야 함. 이스케이프 문자가 있을 경우 오인할 수 있기 때문.
+
+- 프로그램의 외부에 저장된 파일을 읽는 여러가지 방법
+
+: readline 함수 이용
+
+```python
+f = open("C:/doit/새파일.txt", 'r')
+line = f.readline()
+print(line)
+f.close()
+```
+
+readline()을 이용해서 파일을 첫 번째 줄을 읽어 출력함
+
+```python
+f = open("C:/doit/새파일.txt", 'r')
+while True:
+    line = f.readline()
+    if not line: break
+    print(line)
+f.close()
+```
+
+모든 줄을 읽어서 화면에 출력함
+
+```python
+while True:
+    data = input()
+    if not data: break
+    print(data)
+```
+
+사용자의 입력을 받아서 내용을 출력 (파일을 사용한 입력 방법)
+
+: readlines 함수 사용
+
+```python
+f = open("C:/doit/새파일.txt", 'r')
+lines = f.readlines()
+for line in lines:
+    print(line)
+f.close()
+```
+
+readlines 함수는 파일의 모든 줄을 읽어 각 줄을 리스트로 돌려줌.
+
+: read 함수 사용
+
+```python
+f = open("C:/doit/새파일.txt", 'r')
+data = f.read()
+print(data)
+f.close()
+```
+
+read 함수는 파일의 내용 전체를 문자열로 돌려줌.
+
+- 파일에 새로운 내용 추가하기
+
+```python
+f = open("C:/doit/새파일.txt",'a')
+for i in range(11, 20):
+    data = "%d번째 줄입니다.\n" % i
+    f.write(data)
+f.close()
+```
+
+새파일을 열고, wirte를 이용하여 기존 파일에 내용을 더함...
+
+- with문과 함께 사용하기
+
+.close()의 역할을 한 번에 해준다. with 블록을 ㅂ서어나는 순간 열린 파일 객체가 자동으로 close됨...
+
+```python
+# 기존 형식
+f = open("foo.txt", 'w')
+f.write("Life is too short, you need python")
+f.close()
+
+# with문 사용!
+with open("foo.txt", "w") as f:
+    f.write("Life is too short, you need python")
+```
