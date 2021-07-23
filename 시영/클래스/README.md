@@ -114,7 +114,7 @@ class MoreFourCal(FourCal):
 ### 모듈 만들기  
 - .py로 만든 파일은 모두 모듈
 
-###모듈 불러오기  
+### 모듈 불러오기  
 - .py 파일을 불러오기 위해 import 사용
 - 예시) import mod1 (뒤에 .py를 붙이지 않음)
 - import의 사용방법은 다음과 같음
