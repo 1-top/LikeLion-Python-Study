@@ -1,6 +1,6 @@
-#자료형.py
+#1.자료형.py
 
-##[문자형 자료형]
+##[문자형 1.자료형]
 
 #문자열 곱하기 응용
 print("=" * 50)
@@ -70,7 +70,7 @@ print(a.split()) #문자열 나누기
 b = "a:b:c:d"
 print(b.split(':'))
 
-##리스트 자료형
+##리스트 1.자료형
 
 a= [1,2,['a','b',['Life','is']]] #삼중 리스트에서 인덱싱하기
 print(a[2][2][0])
@@ -126,7 +126,7 @@ a = [1,2,3]
 a.extend([4,5])
 print(a)
 
-##[튜플 자료형]
+##[튜플 1.자료형]
 
 t1=(1,2,'a','b')
 print(t1[0])#튜플 인덱싱하기
@@ -138,7 +138,7 @@ t2 = (3,4)
 print(t2 * 3) #튜플 곱하기
 print(len(t1))#튜플 길이 구하기
 
-##[딕셔너리 자료형]
+##[딕셔너리 1.자료형]
 a = {1: 'a'} #딕셔너리에 쌍 추가하기
 a[2]='b'
 print(a)
@@ -160,7 +160,7 @@ print(a.items()) #key와 value 쌍 얻기
 print(a.get('name')) #key로 value 얻기
 print('name' in a)
 
-##[집합 자료형]
+##[집합 1.자료형]
 s1 = set("Hello")
 print(s1)
 s1 = set([1,2,3,4,5,6])
@@ -182,8 +182,8 @@ s1 = set([1,2,3])
 s1.remove(2)
 print(s1)
 
-##불 자료형
-a = True #불 자료형 소개
+##불 1.자료형
+a = True #불 1.자료형 소개
 b = False
 print(type(a))
 print(1==1) #true, false

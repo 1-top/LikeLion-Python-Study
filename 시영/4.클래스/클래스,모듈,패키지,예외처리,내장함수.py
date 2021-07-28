@@ -27,7 +27,7 @@ print(cal1.add(4))
 print(cal2.add(3))
 print(cal2.add(7))
 
-# 사칙연산 클래스 만들기
+# 사칙연산 4.클래스 만들기
 #class FourCal:
       # def setdata(self,first,second):
       # self.first = first
@@ -125,7 +125,7 @@ class SafeFourCal(FourCal):
 a = SafeFourCal(4, 0)
 print(a.div())
 
-# 클래스 변수
+# 4.클래스 변수
 class Family:
     lastname = "김"
 print(Family.lastname)
@@ -241,7 +241,7 @@ print(dir([1,2,3]))
 
 print(divmod(7,3))
 
-# enumerate(자료형(리스트, 튜플, 문자열)을 입력받아 enumerate 객체를 돌려줌)
+# enumerate(1.자료형(리스트, 튜플, 문자열)을 입력받아 enumerate 객체를 돌려줌)
 
 for i, name in enumerate(['body', 'foo' , 'bar']):
     print(i, name)
@@ -250,7 +250,7 @@ for i, name in enumerate(['body', 'foo' , 'bar']):
 
 print(eval('1+2'))
 
-# filter( 함수 이름, 반복 가능한 자료형, 자료형을 함수에 입력했을 때 반환 값이 참인 것만 돌려줌)
+# filter( 함수 이름, 반복 가능한 1.자료형, 자료형을 함수에 입력했을 때 반환 값이 참인 것만 돌려줌)
 
 def positive(x):
     return x>0
@@ -278,7 +278,7 @@ print(a)
 
 print(int(3.4))
 
-# isinstance(첫 번째 인수: 인스턴스, 두 번째 인수: 클래스 이름, 그 클래스의 인스턴스이면 true, 거짓이면 false)
+# isinstance(첫 번째 인수: 인스턴스, 두 번째 인수: 4.클래스 이름, 그 클래스의 인스턴스이면 true, 거짓이면 false)
 
 class Person: pass
 a = Person()
