@@ -50,7 +50,6 @@ class Food(object):
             return True
         else:
             return False
-
 food_1 = Food('아이스크림',3000)
 food_2 = Food('햄버거', 5000)
 food_3 = Food('콜라',2000)
