@@ -47,7 +47,7 @@ grades = { name: 'PASS' if value > 70 else 'No-PASS' for name, value in scores.i
 print(grades)
 
 
-# 튜플일땐??
+# 튜플일땐 ??
 print(( x for x in range(10) ))
 # 튜플이 결과로 나올거라 예상했는데, 기대하지 않은 결과 산출
 # <generator object <genexpr> at 0x0000018916F036D0>
