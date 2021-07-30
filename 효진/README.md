@@ -9,6 +9,11 @@ Python 기초
   - 컴프리헨션  
     : https://wikidocs.net/22795  
     : (리스트 컴프리헨션) https://wikidocs.net/84393
+  - 매직메소드  
+    : https://wikidocs.net/83755  
+    : https://velog.io/@hyeseong-dev/Python-magic-method%EB%9E%80  
+    : https://sosoeasy.tistory.com/434  
+    : https://ziwon.github.io/post/python_magic_methods/
 ------
 
 1. 자료형
@@ -33,4 +38,6 @@ Python 기초
 7. 내장함수
 
 8. 컴프리헨션
+
+9. 매직메소드
 ----
