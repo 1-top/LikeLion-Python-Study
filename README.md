@@ -4,11 +4,11 @@
 
 ## Participants
 
-- 이서현 `Harry-Bro`
-- 정래현 `fogus14`
-- 최시영 `siyoung08`
-- 강효진 `yujin9907`
-- 허유진 `river-hj`
+- 이서현(Lecturer) `Harry-Bro`
+- 정래현(Student) `fogus14`
+- 최시영(Student) `siyoung08`
+- 강효진(Student) `yujin9907`
+- 허유진(Student) `river-hj`
 
 ## Package naming convention
 
