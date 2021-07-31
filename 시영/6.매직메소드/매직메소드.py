@@ -1,10 +1,10 @@
-# 매직 메소드 __init__
+# 매직메소드 __init__
 class Car:
     def __init__(self):
         print("자동차 제작 완료")
 
 
-# 매직 메소드 사용 전(예시1)
+# 매직메소드 사용 전(예시1)
 class Food(object):
     def __init__(self, name, price):
         self.name = name
@@ -14,7 +14,7 @@ food_1 = Food('아이스크림',3000)
 
 print(food_1)
 
-# 매직 메소드 사용 후(예시1)
+# 매직메소드 사용 후(예시1)
 class Food(object):
     def __init__(self, name, price):
         self.name = name
@@ -26,7 +26,7 @@ food_1 = Food('아이스크림',3000)
 
 print(food_1)
 
-# 매직 메소드 예시2
+# 매직메소드 예시2
 class coordinate:
   def __init__(self, x, y):
     self.x = x
@@ -40,7 +40,7 @@ coord3 = coord1 + coord2
 print(coord3.x)
 print(coord3.y)
 
-# 매직 메소드 예시3
+# 매직메소드 예시3
 class Food(object):
     def __init__(self, name, price):
         self.name = name

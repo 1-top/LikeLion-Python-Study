@@ -15,7 +15,7 @@ class Car:
 - 매직 메소드를 사용하면 클래스를 파이썬의 내장 함수처럼 동작하도록 할 수 있음.
 
 ```python
-# 매직 메소드 사용 전
+# 매직메소드 사용 전
 class Food(object):
     def __init__(self, name, price):
         self.name = name
@@ -30,7 +30,7 @@ print(food_1)
 - class 객체를 만들고 print를 하면 할당된 메모리 주소가 나옴
 - 만일 객체의 정보를 보고 싶다면 매직 메서드를 정의해줘야 함
 ```python
-# 매직 메소드 사용 후( 매직 메소드 사용 예시1)
+# 매직메소드 사용 후( 매직메소드 사용 예시1)
 class Food(object):
     def __init__(self, name, price):
         self.name = name
@@ -47,7 +47,7 @@ print(food_1)
 - 매직 메소드를 정의했을 때 올바른 결과가 출력됨
 
 ```python
-# 매직 메소드 사용 예시2
+# 매직메소드 사용 예시2
 class coordinate:
   def __init__(self, x, y):
     self.x = x
@@ -65,7 +65,7 @@ print(coord3.y)
 - __add__는 x는 x끼리 더하고 y는 y끼리 더함
 
 ```python
-# 비교 연산자도 매직 메소드 정의해줄 필요 있음
+# 비교 연산자도 매직메소드 정의해줄 필요 있음
 class Food(object):
     def __init__(self, name, price):
         self.name = name
