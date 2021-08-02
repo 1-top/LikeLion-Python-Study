@@ -28,7 +28,7 @@ print(food_1)
 결과: <__main__.Food object at 0x000002A4AFA5CFD0>
 ```
 - class 객체를 만들고 print를 하면 할당된 메모리 주소가 나옴
-- 만일 객체의 정보를 보고 싶다면 매직 메서드를 정의해줘야 함
+- 만일 객체의 정보를 보고 싶다면 매직 메서드를 정의해줘야 함.
 ```python
 # 매직메소드 사용 후( 매직메소드 사용 예시1)
 class Food(object):
