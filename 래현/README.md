@@ -5,6 +5,7 @@ Python 기초
 * 학습자료 : https://wikidocs.net/book/1    <br>// 파이썬 기초
 * 학습자료 : https://wikidocs.net/22805     <br>// 컴프리헨션
 * 학습자료 : https://wikidocs.net/83755     <br>// 매직메소드
+* 학습자료 : https://wikidocs.net/book/4223     <br>// Django
 ------
 1. 자료형
 2. 제어문
