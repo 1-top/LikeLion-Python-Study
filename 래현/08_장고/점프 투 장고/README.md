@@ -339,3 +339,145 @@ urlpatterns = [
 ```
 
 detail 앞에 pybo 라는 네임스페이스를 붙여준 것!
+
+## 2-06 데이터 저장
+
+### 답변등록 폼
+
+`{% csrf_token %}`은 보안에 관련된 항목으로 form으로 전송한 데이터가 실제 웹 페이지에서 작성한 데이터인지를 판단해 주는 가늠자 역할을 한다. 만약 해커가 엉뚱한 방법으로 데이터를 전송할 경우에는 서버에서 발행한 csrf_token 값과 해당 툴에서 보낸 csrf_token 값이 일치하지 않기 때문에 오류가 발생할 것이다.
+
+따라서 form 태그 바로 밑에 `{% csrf_token %}` 태그를 항상 위치시키도록 해야 한다.
+
+```python
+<form action="{% url 'pybo:answer_create' question.id %}" method="post">
+{% csrf_token %}
+<textarea name="content" id="content" rows="15"></textarea>
+<input type="submit" value="답변등록">
+</form>
+```
+
+---
+
+## 2-07 스태틱
+
+### 스태틱 디렉터리
+
+스타일시트 파일은 장고의 스태틱 디렉터리에 저장해야 한다. 스태틱 디렉터리도 템플릿 디렉터리와 마찬가지로 config/settings.py 파일에 등록해야 한다.
+
+```python
+(... 생략 ...)
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+(... 생략 ...)
+```
+
+STATICFILES_DIRS 변수를 추가했다. 그리고 STATICFILES_DIRS에는 `BASE_DIR / 'static'` 디렉터리를 추가했다. `BASE_DIR / 'static'`은 `C:\projects\mysite\static` 디렉터리를 의미한다!
+
+### 스타일시트
+
+앞서 스태틱 디렉터리를 생성했으므로 스타일시트 파일은 static패키지 아래에 저장해야 한다.
+
+### 템플릿에 스타일 적용
+
+작성한 스타일시트 파일은 다음과 같이 적용할 수 있다.
+
+[파일명: C:\projects\mysite\templates\pybo\question_detail.html]
+
+```python
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<h1>{{ question.subject }}</h1>
+(... 생략 ...)
+```
+
+템플릿에 스타일시트와 같은 스태틱 파일을 사용하기 위해서는 템플릿 최상단에 {% load static %} 태그를 삽입해야 한다. 그리고 스타일시트 파일 경로는 {% static 'style.css' %} 처럼 지정한다.
+
+---
+
+## 2-08 부트스트랩
+
+부트스트랩(Bootstrap)은 디자이너의 도움 없이도 개발자 혼자서 상당히 괜찮은 수준의 웹 페이지를 만들수 있게 도와주는 프레임워크이다.
+
+ +) 단순 설치 및 적용하는 예시가 교재에 기술되어있기에 필요시 구글링 혹은 원문 참고...
+
+---
+
+## 2-09 템플릿 상속
+
+### 템플릿 상속
+
+장고는 템플릿 상속(extend) 기능을 제공한다. 템플릿 상속은 기본 틀이 되는 템플릿을 먼저 작성하고 다른 템플릿에서 그 템플릿을 상속해 사용하는 방법이다.
+
+### base.html
+
+```python
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <!-- pybo CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Hello, pybo!</title>
+</head>
+<body>
+<!-- 기본 템플릿 안에 삽입될 내용 Start -->
+{% block content %}
+{% endblock %}
+<!-- 기본 템플릿 안에 삽입될 내용 End -->
+</body>
+</html>
+```
+
+`base.html` 템플릿은 모든 템플릿이 상속해야 하는 템플릿으로 표준 HTML 문서의 기본 틀이된다. body 엘리먼트 안의 `{% block content %}` 와 `{% endblock %}` 템플릿 태그는 `base.html`을 상속한 템플릿에서 개별적으로 구현해야 하는 영역이 된다.
+
+### question_list.html
+
+```python
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-3">
+    <table class="table">
+
+        (... 생략 ...)
+
+    </table>
+</div>
+{% endblock %}
+```
+
+base.html 템플릿을 상속하기 위해 {% extends 'base.html' %} 처럼 extends 템플릿 문법을 사용했다.
+
+그리고 {% block content %} 와 {% endblock %} 사이에 question_list.html에서만 쓰이는 내용을 작성했다. 이렇게 하면 이제 question_list.html은 base.html 템플릿을 상속받아 표준 HTML문서로 바뀌게 될 것이다.
+
+---
+
+## 2-10 폼
+
+### 폼(Form)
+
+폼은 쉽게 말해 페이지 요청시 전달되는 파라미터들을 쉽게 관리하기 위해 사용하는 클래스이다. 폼은 필수 파라미터의 값이 누락되지 않았는지, 파라미터의 형식은 적절한지 등을 검증할 목적으로 사용한다. 이 외에도 HTML을 자동으로 생성하거나 폼에 연결된 모델을 이용하여 데이터를 저장할 수도 있다.
+
++) [forms.py](http://forms.py/) 파일은 앱 패키지 내에 신규로 작성해야 한다.
+
+```python
+from django import forms
+from pybo.models import Question
+
+class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Question  # 사용할 모델
+        fields = ['subject', 'content']  # QuestionForm에서 사용할 Question 모델의 속성
+```
+
+QuestionForm은 모델 폼(`forms.ModelForm`)을 상속했다. 장고의 폼은 일반 폼(`forms.Form)`과 모델 폼(`forms.ModelForm`)이 있는데 모델 폼은 모델(Model)과 연결된 폼으로 폼을 저장하면 연결된 모델의 데이터를 저장할수 있는 폼이다. 모델 폼은 이너 클래스인 `Meta` 클래스가 반드시 필요하다. `Meta` 클래스에는 사용할 모델과 모델의 속성을 적어야 한다.
+
+즉, QuestionForm은 Question 모델과 연결된 폼이고 속성으로 Question 모델의 subject와 content를 사용한다고 정의한 것이다.
